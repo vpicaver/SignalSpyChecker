@@ -1,0 +1,8 @@
+[requires]
+catch2/3.4.0  # Specify the desired version of Catch2
+
+[generators]
+VirtualBuildEnv
+VirtualRunEnv
+CMakeToolchain
+CMakeDeps
