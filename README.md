@@ -12,13 +12,13 @@
 ## Getting Started
 
 ### Prerequisites
-- Qt 5 or 6
+- Qt 6
 - C++17 or later
-- [Catch2 Testing Framework](https://github.com/catchorg/Catch2)
+- [Catch2 v3 Testing Framework](https://github.com/catchorg/Catch2)
 
 ### Installation
 1. Clone the repository or copy the `SpyChecker.h` and `SpyChecker.cpp` files into your project.
-2. Include `SpyChecker.h` in your tests.
+2. Include `SignalSpyChecker.h` in your tests.
 
 ## Usage
 
@@ -26,7 +26,7 @@
 Here’s how to use the `SignalSpyChecker` library in a unit test:
 
 ```cpp
-#include "SpyChecker.h"
+#include <SignalSpyChecker.h>
 #include <QObject>
 #include <catch2/catch.hpp>
 
