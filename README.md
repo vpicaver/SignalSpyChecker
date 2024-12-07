@@ -1,7 +1,12 @@
 
 # SignalSpyChecker
 
-**SignalSpyChecker** is a lightweight C++ library for validating Qt signals in your unit tests. It provides two tools: `Constant` and `Optional`, for verifying signal counts and value ranges. The library is built on top of `QSignalSpy` and integrates seamlessly with [Catch2](https://github.com/catchorg/Catch2) for testing.
+**SignalSpyChecker** is a lightweight C++ library for validating Qt signals in your unit tests. 
+It provides two tools: `Constant` and `Optional`, for verifying signal counts and value ranges. 
+The library is built on top of `QSignalSpy` and integrates seamlessly 
+with [Catch2](https://github.com/catchorg/Catch2) for testing. SignalSpyChecker is particularly 
+useful for monitoring multiple QSignalSpy instances simultaneously, 
+ensuring that no unexpected extra signals are emitted during a single action.
 
 ## Features
 - **SignalSpyChecker::Constant**: Validates that signals are emitted a specific, fixed number of times.
