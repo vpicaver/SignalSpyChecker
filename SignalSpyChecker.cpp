@@ -1,5 +1,5 @@
 //Our includes
-#include "SpyChecker.h"
+#include "SignalSpyChecker.h"
 
 //Catch includes
 #include <catch2/catch_test_macros.hpp>

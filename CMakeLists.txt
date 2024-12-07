@@ -16,15 +16,15 @@ find_package(Catch2 REQUIRED)
 
 file(GLOB spyCheckerCPP *.cpp)
 file(GLOB spyCheckerH *.h)
-add_library(spychecker STATIC
+add_library(SignalSpyChecker STATIC
     ${spyCheckerCPP}
     ${spyCheckerH}
     )
-target_link_libraries(spychecker
+target_link_libraries(SignalSpyChecker
     PUBLIC
     Catch2::Catch2
     Qt::Core
     Qt::Test
     )
-target_include_directories(spychecker PUBLIC .)
+target_include_directories(SignalSpyChecker PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
