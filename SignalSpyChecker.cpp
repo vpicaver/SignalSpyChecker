@@ -110,9 +110,22 @@ Constant Constant::makeChecker(QObject *object)
     for(int i = 0; i < metaObject->methodCount(); i++) {
         auto method = metaObject->method(i);
         if(method.methodType() == QMetaMethod::Signal) {
-            SignalSpy* spy = new SignalSpy(object, method);
-            spy->setObjectName(method.name() + "Spy");
-            checker.insert(spy, 0);
+            QString spyName = method.name() + QStringLiteral("Spy");
+            bool exist = [&]() {
+                for(const auto& keyValue : checker.asKeyValueRange()) {
+                    if(keyValue.first->objectName() == spyName) {
+                        return true;
+                    }
+                }
+                return false;
+            }();
+
+            if(!exist) {
+                SignalSpy* spy = new SignalSpy(object, method);
+                spy->setObjectName(spyName);
+
+                checker.insert(spy, 0);
+            }
         }
     }
 
